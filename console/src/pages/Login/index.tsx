@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, Input, Button, Alert } from "antd";
 import { KeyOutlined, LoginOutlined } from "@ant-design/icons";
 import { useAuthStore } from "../../stores/auth";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import styles from "./index.module.less";
 
 export default function Login() {
@@ -97,7 +97,20 @@ export default function Login() {
           </Form.Item>
         </Form>
 
-        <p className={styles.hint}>{t("login.hint")}</p>
+        <p className={styles.hint}>
+          <Trans
+            i18nKey="login.hint"
+            components={{
+              link: (
+                <a
+                  href="https://portal.qiniu.com/ai-inference/api-key"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              ),
+            }}
+          />
+        </p>
       </div>
     </div>
   );

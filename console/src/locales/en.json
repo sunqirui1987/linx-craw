@@ -7,7 +7,7 @@
     "apiKeyInvalidPrefix": "API Key must start with sk-, get it from Qiniu Cloud Console",
     "submit": "Sign in",
     "failed": "Login failed",
-    "hint": "API Key must start with sk-, get it from Qiniu Cloud Console",
+    "hint": "API Key must start with sk-, get it from <link>Qiniu Cloud Console</link>",
     "logout": "Log out"
   },
   "common": {

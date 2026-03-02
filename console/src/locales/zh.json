@@ -7,7 +7,7 @@
     "apiKeyInvalidPrefix": "API Key 必须以 sk- 开头，请在七牛云控制台获取",
     "submit": "登录",
     "failed": "登录失败",
-    "hint": "API Key 须以 sk- 开头，可在七牛云控制台获取",
+    "hint": "API Key 须以 sk- 开头，可在 <link>七牛云控制台</link> 获取",
     "logout": "退出登录"
   },
   "common": {
