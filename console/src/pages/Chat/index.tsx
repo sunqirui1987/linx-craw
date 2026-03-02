@@ -11,7 +11,8 @@ import sessionApi from "./sessionApi";
 import { useLocalStorageState } from "ahooks";
 import defaultConfig, { DefaultConfig } from "./OptionsPanel/defaultConfig";
 import Weather from "./Weather";
-import { getApiUrl, getApiToken } from "../../api/config";
+import { getApiUrl } from "../../api/config";
+import { getApiToken } from "../../api/token";
 import { providerApi } from "../../api/modules/provider";
 import styles from "./index.module.less";
 

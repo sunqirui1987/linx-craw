@@ -1,5 +1,12 @@
 electron/node_modules
+python-dist/
+release/
 __pycache__
 src/aicraw/agents/__pycache__
 src/aicraw.egg-info
 src/copaw.egg-info
+console/node_modules
+dist
+dist-electron
+logs
+node_modules

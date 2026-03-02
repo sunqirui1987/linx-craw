@@ -1,0 +1,65 @@
+{
+  "name": "aicraw",
+  "productName": "Aicraw",
+  "version": "0.1.0",
+  "description": "AI 个人助理 - 支持钉钉、飞书、QQ 等多端接入",
+  "author": "Aicraw Team",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": ["electron"]
+  },
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev:electron": "vite build --config vite.electron.config.ts && electron .",
+    "build:python": "node scripts/ensure-python-backend.mjs --force",
+    "build:electron": "node scripts/check-python-dist.mjs && vite build --config vite.electron.config.ts && electron-builder",
+    "build:electron:mac": "node scripts/check-python-dist.mjs && vite build --config vite.electron.config.ts && electron-builder --mac",
+    "build:electron:win": "node scripts/check-python-dist.mjs && vite build --config vite.electron.config.ts && electron-builder --win",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-electron": "^0.28.8"
+  },
+  "build": {
+    "appId": "com.aicraw.desktop",
+    "productName": "Aicraw",
+    "copyright": "Copyright © 2025 Aicraw",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist-electron/**/*",
+      "!dist-electron/**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "python-dist/Aicraw",
+        "to": "bin/aicraw",
+        "filter": ["**/*"]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": ["dmg", "zip"],
+      "arch": ["x64", "arm64"]
+    },
+    "win": {
+      "target": ["nsis", "portable"],
+      "arch": ["x64"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
