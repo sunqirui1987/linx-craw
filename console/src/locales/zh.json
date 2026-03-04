@@ -1,6 +1,6 @@
 {
   "login": {
-    "title": "LinCraw 控制台",
+    "title": "LinClaw 控制台",
     "subtitle": "请输入您的 API Key 登录",
     "apiKeyLabel": "API Key",
     "apiKeyRequired": "请输入 API Key",

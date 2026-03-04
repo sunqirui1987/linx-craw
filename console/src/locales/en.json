@@ -1,6 +1,6 @@
 {
   "login": {
-    "title": "LinCraw Console",
+    "title": "LinClaw Console",
     "subtitle": "Enter your API Key to sign in",
     "apiKeyLabel": "API Key",
     "apiKeyRequired": "Please enter API Key",

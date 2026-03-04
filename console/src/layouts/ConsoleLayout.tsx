@@ -129,7 +129,7 @@ export default function ConsoleLayout({ children }: ConsoleLayoutProps) {
     <div className={styles.consoleLayout}>
       <header className={styles.consoleHeader}>
         <div className={styles.headerLeft}>
-          <span className={styles.logo}>LinCraw</span>
+          <span className={styles.logo}>LinClaw</span>
           {version && (
             <span className={styles.version}>v{version}</span>
           )}

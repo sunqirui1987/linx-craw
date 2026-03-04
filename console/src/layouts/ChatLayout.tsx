@@ -29,7 +29,7 @@ export default function ChatLayout({ children }: ChatLayoutProps) {
     <div className={styles.chatLayout}>
       <div className={styles.chatHeader}>
         <div className={styles.chatHeaderLeft}>
-          <span className={styles.logo}>LinCraw</span>
+          <span className={styles.logo}>LinClaw</span>
           <span className={styles.chatTitle}>Chat</span>
         </div>
         <div className={styles.chatHeaderRight}>
