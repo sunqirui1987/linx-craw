@@ -5,7 +5,7 @@ const defaultConfig = {
     prefix: "aicraw",
     leftHeader: {
       logo: "",
-      title: "Work with LinCraw",
+      title: "Work with LinClaw",
     },
   },
   sender: {

@@ -2,8 +2,9 @@
 
 基于七牛云的 AI 个人助理，支持钉钉、飞书、QQ 等多端接入。
 
-![LinCraw Chat](docs/image.png)
-![LinCraw Chat](docs/image2.png)
+![LinClaw Chat](docs/image.png)
+![LinClaw Chat](docs/image2.png)
+![LinClaw Chat](docs/image3.png)
 
 ## 环境要求
 

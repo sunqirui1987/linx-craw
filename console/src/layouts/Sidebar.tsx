@@ -188,7 +188,7 @@ export default function Sidebar({
             letterSpacing: "0.02em",
           }}
         >
-          LinCraw
+          LinClaw
         </span>
         {!collapsed && version && (
           <span
