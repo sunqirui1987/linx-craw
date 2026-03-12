@@ -24,6 +24,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  MACOSX_DEPLOYMENT_TARGET: '14.0'  # 支持 macOS 14+ (M1/M2 及更新机型)
   PNPM_VERSION: '9.15.0'   # 与 console/package.json packageManager 字段保持一致
   NODE_VERSION: '20'
   PYTHON_VERSION: '3.12'   # pyproject.toml 要求 >=3.10,<3.15，优先使用 3.12

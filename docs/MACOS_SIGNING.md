@@ -11,6 +11,8 @@
 
 macOS 10.15+ 的 Gatekeeper 要求：**代码签名** + **公证** 才能顺利分发。
 
+当前仓库 Electron 打包已设置最低系统版本为 **macOS 14.0+**（`build.mac.minimumSystemVersion`）。
+
 ---
 
 ## 前置条件

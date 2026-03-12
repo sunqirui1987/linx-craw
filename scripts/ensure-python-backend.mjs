@@ -17,6 +17,10 @@ const venvDir = join(repoRoot, '.build-venv')
 const exeName = process.platform === 'win32' ? 'LinClaw.exe' : 'LinClaw'
 const exePath = join(pythonDistDir, exeName)
 const force = process.argv.includes('--force')
+const macDeploymentTarget = process.env.MACOSX_DEPLOYMENT_TARGET || '14.0'
+const buildEnv = process.platform === 'darwin'
+  ? { ...process.env, MACOSX_DEPLOYMENT_TARGET: macDeploymentTarget }
+  : { ...process.env }
 
 if (!force && existsSync(exePath)) {
   console.log('[python-backend] Existing binary detected, skipping rebuild.')
@@ -24,6 +28,9 @@ if (!force && existsSync(exePath)) {
 }
 
 console.log('[python-backend] Building Python backend with PyInstaller...')
+if (process.platform === 'darwin') {
+  console.log('[python-backend] Using MACOSX_DEPLOYMENT_TARGET=' + macDeploymentTarget)
+}
 
 // 0. 创建/使用 venv（aicraw 要求 Python >=3.10,<=3.14，优先使用 3.12/3.11/3.10）
 const PYTHON_CANDIDATES = process.platform === 'win32'
@@ -117,6 +124,7 @@ console.log('[python-backend] Installing pyinstaller and aicraw in venv...')
 const pipInstall = spawnSync(venvPython, ['-m', 'pip', 'install', 'pyinstaller', '.'], {
   cwd: repoRoot,
   stdio: 'inherit',
+  env: buildEnv,
 })
 if (pipInstall.status !== 0) {
   console.error('[python-backend] pip install failed.')
@@ -134,6 +142,7 @@ const pyinstaller = spawnSync(venvPython, ['-m', 'PyInstaller',
 ], {
   cwd: repoRoot,
   stdio: 'inherit',
+  env: buildEnv,
 })
 
 if (pyinstaller.status !== 0) {

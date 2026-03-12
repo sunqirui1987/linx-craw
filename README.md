@@ -36,6 +36,8 @@ aicraw app
 
 参考 [qiniu-aistudio](https://github.com/qbox/qiniu-aistudio) 结构，提供 Electron 客户端，内嵌打包后的 Python 后端。打包后的应用为**独立可执行文件**，无需安装 Python 即可运行。
 
+> macOS 安装包最低系统版本：**macOS 14.0+**
+
 ### 开发/调试模式（不打包）
 
 无需 PyInstaller、electron-builder，直接运行源码，适合日常开发与调试。
